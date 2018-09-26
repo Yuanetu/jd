@@ -1,0 +1,253 @@
+// 导入公共样式文件
+@import 'base.less';
+
+
+body {
+    /* 给body设置最大宽度让页面在PC端不会太大 */
+    max-width: 750px;
+    /* 让body居中设置居中 块级居中使用margin:0 auto */
+    margin: 0 auto;
+}
+
+//头部样式区域
+#header {
+    /* 头部是固定定位不会参照父元素宽度 参照整个浏览器页面的宽度 也要给头部设置最大宽度 */
+    max-width: 750px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    height: 45px;
+    align-items: center;
+    // background-color: @main-color;
+    z-index: 999;
+    >.icon-logo {
+        display: block;
+        width: 60px;
+        height: 28px;
+        // background-image: url(../images/sprites.png);
+        // background-size: 200px 200px;
+        background-position: 0 -107px;
+        margin: 0 10px;
+    }
+
+    >form {
+        position: relative;
+        flex: 1;
+        >input {
+            width: 100%;
+            height: 30px;
+            border-radius: 15px;
+            padding-left: 35px;
+        }
+        >.icon-search {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            // background-image: url(../images/sprites.png);
+            // background-size: 200px 200px;
+            background-position: -60px -108px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10px;
+        }
+    }
+
+    >.login {
+        margin: 0 10px;
+        color: #fff;
+        font-size: 14px;
+    }
+}
+
+
+//轮播图样式区域
+#slide {
+    a {
+        display: block;
+        >img {
+            width: 100%;
+        }
+    }
+
+    
+}
+
+
+
+//导航栏样式区域
+#nav {
+    >ul {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 10px 0;
+        >li {
+            width: 25%;
+            >a {
+                >img {
+                    width: 40px;
+                    height: 40px;
+                }
+                >p {
+                    line-height: 30px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+
+
+//主体样式区域
+
+#main {
+    background-color: @bg-color;
+    padding: 20px 10px 60px 10px;
+
+    // 秒杀样式区域
+    >.seckill {
+        background-color: #fff;
+        padding: 5px 0;
+        box-shadow: 0 0 1px 1px @border-color;
+        >.title {
+            position: relative;
+            display: flex;
+            align-items: center;
+            >.naozhong {
+                width: 20px;
+                height: 25px;
+                margin: 0 10px 0 5px;
+            }
+            >.name {
+                color: @main-color;
+                margin-right: 10px;
+                font-weight: bold;
+            }
+            >.down-time {
+                >span {
+                    display: inline-block;
+                    width: 15px;
+                    height: 15px;
+                    background-color: #000;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 15px;
+
+                    &:nth-child(3n) {
+                        background-color: #fff;
+                        color: #000;
+                        width: 5px;
+                    }
+                }
+            }
+            >.more {
+                position: absolute;
+                right: 10px;
+            }
+        }
+
+        >.content {
+            padding: 15px 0;
+            >ul {
+                display: flex;
+                >li {
+                    flex: 1;
+                    >a {
+                        >img {
+                            width: 110px;
+                            height: 110px;
+                        }
+                        >p {
+                            text-align: center;
+                            font-size: 12px;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        border-left: 1px solid @border-color;
+                        border-right: 1px solid @border-color;
+                    }
+                }
+            }            
+        }
+    }
+
+    //京东超市
+    .jd-market {
+        background-color: #fff;
+        margin-top: 10px;
+        box-shadow: 0 0 1px 1px @border-color;
+
+        >.title {
+            position: relative;
+            border-bottom: 1px solid @border-color;
+            >h4 {
+                line-height: 30px;
+                font-weight: normal;
+                padding-left: 20px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 3px;
+                height: 15px;
+                background-color: @main-color;
+                left: 10px;
+                top: 8px;
+            }
+        }
+
+        >.content {
+            width: 100%;
+            display: flex;
+            >.left {
+                flex: 1;
+                >a {
+                    display: block;
+                    >img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            >.right {
+                flex: 1;
+                >a {
+                    display: block;
+                    >img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+//底部区域
+#footer {
+    max-width: 750px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #fff;
+    >ul {
+        display: flex;
+        >li {
+            flex: 1;
+            text-align: center;
+            >a {
+                >img {
+                    width: 65px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+

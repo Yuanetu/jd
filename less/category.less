@@ -1,0 +1,174 @@
+// 导入公共样式
+@import 'base.less';
+
+html,body {
+    height: 100%;
+}
+
+body {
+    padding: 40px 0 50px;
+}
+
+//头部样式区域
+#header {
+    display: flex;
+    background-color: #eee;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    // 返回图标
+    >.icon-back {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-position: -20px 0;
+        padding: 10px;
+        background-origin: content-box;
+        background-clip: content-box;
+    }
+
+    >form {
+        margin-top: 4px;
+        flex: 1;
+        position: relative;
+        >input {
+            width: 100%;
+            line-height: 30px;
+            border-radius: 15px;
+            padding-left: 30px;
+
+        }
+        >.icon-search {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-position: -60px -108px;
+            padding: 5px;
+            background-origin: content-box;
+            background-clip: content-box;
+        }
+    }
+
+    >.icon-menu{
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-position: -60px 0;
+        padding: 10px;
+        background-origin: content-box;
+        background-clip: content-box;
+    }
+}
+
+
+//中间主体样式区域
+#main {
+    height: 100%;
+    display: flex;
+    //左边样式区域
+    >.aside-left {
+        flex-shrink: 0;
+        width: 85px;
+        height: 100%;
+        background-color: #eee;
+        overflow: hidden;
+
+        >.swiper-container {
+            height: 100%;
+            >.swiper-wrapper {  //这个属性默认不写是height:100%
+                // height: 100%;
+                >.swiper-slide {
+                    height: auto;
+                    >ul {
+                        > li {
+                            // :hover {
+                            //     background-color: #fff;
+                            //     color: @main-color;
+                            // }
+                            >a {
+
+                                display: block;
+                                width: 100%;
+                                line-height: 46px;
+                                text-align: center;
+
+                                &:active {
+                                    color: #0f0;
+                                }
+                            }
+                            &.active {
+                                >a {
+                                    background-color: #fff;
+                                    color: @main-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //右边样式区域
+    >.content-right {
+        flex: 1;
+        padding: 10px;
+        height: 100%;
+        overflow: hidden;
+
+        .swiper-container {
+            height: 100%;
+
+            .swiper-slide {
+                height: auto;
+                >#branchList {
+                    ul {
+                        display: flex;
+                        flex-wrap: wrap;
+                        padding: 10px;
+                        >li {
+                            margin: 5px 0;
+                            width: 33.33%;
+            
+                            >a {
+                                display: block;
+                                width: 100%;
+                                text-align: center;
+                                >img {
+                                    width: 70px;
+                                }
+                                >span {
+                                    display: block;
+                                    padding-top: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//底部样式代码 {
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 999;
+    >ul {
+        display: flex;
+        >li {
+            flex: 1;
+            text-align: center;
+            >a {
+                >img {
+                    width: 65px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}

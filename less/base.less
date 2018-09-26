@@ -1,0 +1,91 @@
+/* 公共变量 */
+
+@main-color: #e93b3d;
+@border-color: #ccc;
+@a-color: #666;
+@bg-color: #f5f5f5;
+
+
+/* 样式重置（初始化）*/
+
+* {
+    margin: 0;
+    padding: 0;
+
+    /*在移动端设置盒模型border-box 是为了防止元素添加边框或者padding后 出现水平滚动条*/
+    box-sizing: border-box;
+
+    /* 去除移动端按住元素的时候会出现高亮背景色 */
+    -webkit-tap-highlight-color: transparent;
+
+    /* 去掉所有移动端内边框 */
+    outline: none;
+    
+}
+
+a {
+    color: @a-color;
+    text-decoration: none  //去掉下划线
+}
+
+li {
+    list-style: none;  //去掉小圆点
+}
+
+input {
+    border: 0;  //去掉外边框
+}
+
+img {
+    /* 解决图片底部3px的间隙 为了让图片的对齐方式和文本一致*/
+    vertical-align: middle;
+}
+
+i {
+    font-style: normal;
+}
+
+
+/* 公共样式 */
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+// 清除浮动带来的影响
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 公共的图标样式 */
+/* 属性选择器 匹配类名以icon-开头 或者 中间包含了空格icon-的元素 */
+[class^='icon-'],
+[class*=' icon-'] {
+    /* 公共的精灵图 */
+    background-image: url(../images/sprites.png);
+    /* 设置背景图的大小 图片要缩小一半来写 背景图就设置背景图大小 */
+    background-size: 200px 200px;
+}
+
+// 边框
+.border-left {
+    border-left: 1px solid @border-color;
+}
+
+.border-right {
+    border-right: 1px solid @border-color;
+}
+
+.border-top {
+    border-top: 1px solid @border-color;
+}
+
+.border-bottom {
+    border-bottom: 1px solid @border-color;
+}
